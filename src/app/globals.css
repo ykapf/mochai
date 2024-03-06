@@ -2,28 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Kaftan";
+  src: url("/fonts/kaftan-trial.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
+@font-face {
+  font-family: "Ninna";
+  src: url("/fonts/Ninna-TRIAL.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --foreground-rgb: 77, 33, 1;
+  --background-rgb: 255, 246, 227;
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
 }
 
 @layer utilities {
@@ -31,3 +38,27 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Custom CSS */
+.kaftanFont {
+  font-family: "Kaftan", sans-serif;
+}
+
+.ninnaFont {
+  font-family: "Ninna", sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+  * {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: none;
+  color: inherit;
+}
+
+/* * {
+  border: 1px solid red;
+} */
